@@ -1,0 +1,8 @@
+.icon-animated{
+
+}
+
+.icon-animated:hover{
+    animation: spin 2s infinite linear;
+    
+}

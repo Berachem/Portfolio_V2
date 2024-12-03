@@ -1,0 +1,147 @@
+{
+    "projects": [
+      {
+        "nom": "Île de la Cité, Paris 🏛️🌍",
+        "descriptionCourte": "La valorisation d'un patrimoine mondial en partenariat avec l'UNESCO",
+        "description": "Conception d'un Site Web pour participer à la valorisation d'un patrimoine mondial en partenariat avec l'UNESCO : l'Ile de la Cité à Paris (Notre Dame, l'ancien Palais de Justice...)",
+        "technologies": ["HTML", "CSS", "JavaScript", "PHP"],
+        "lienGitHub": "https://github.com/Berachem/IledelaCite_Unesco",
+        "lienSiteWeb": "http://iledelacite-paris.fr/src/index.php",
+        "lienUNESCO": "https://www.unesco.org/fr",
+        "media": "https://berachem.dev/assets/img/ilecite.png"
+      },
+      {
+        "nom": "Zoo-ggle 🦁",
+        "descriptionCourte": "Jeu de mots multijoueur en ligne (Inspiration Boggle)",
+        "description": "Plateforme de jeu en ligne permettant de trouver le plus de mots possible en utilisant les lettres du plateau de jeu. Le jeu est jouable en solo ou en multijoueur.",
+        "technologies": ["React", "TypeScript", "PHP", "MySQL", "C", "Java", "Python"],
+        "lienRapport": "https://docs.google.com/document/d/1HvlYzxMcQ87QlavMk3Z_jaXWTemJKZzu9LXvUgGAL3Y/edit?usp=sharing",
+        "media": "https://berachem.dev/assets/img/zoo_ggle_landing.png"
+      },
+      {
+        "nom": "Azul Game (IA)",
+        "descriptionCourte": "Jeu de plateau Azul avec une IA intégrée",
+        "description": "Implémentation du jeu \"Azul\" en Python grâce à la librairie \"Tkinter\". Intégration d'un système de sauvegarde de partie et d'une IA capable de jouer à différents niveaux (Partie Difficile, Facile, rapide, longue).",
+        "technologies": ["Python", "Tkinter", "IA"],
+        "lienGitHub": "https://github.com/Berachem/Azul-Game",
+        "lienSiteWeb": "https://berachem.dev/Azul-Game/",
+        "media": "https://berachem.dev/assets/demoazul.mp4"
+      },
+      {
+        "nom": "Kontabl 💰",
+        "descriptionCourte": "Un portail Web pour la consultation des comptes de commerçants",
+        "description": "Conception d'un Site Web pour la consultation des comptes de commerçants. Projet universitaire visant à créer un portail Web dédié à la consultation des comptes des clients, entreprises ou commerçants.",
+        "technologies": ["PHP", "MySQL"],
+        "lienGitHub": "https://github.com/Berachem/kontabl",
+        "lienSiteWeb": "https://kontabl.berachem.dev/#/login",
+        "lienRapport": "https://drive.google.com/drive/folders/1MlSPmzLcCJm4KJoZTvuvrkUGpMf7DZQX?usp=sharing",
+        "media": "https://berachem.dev/assets/demokontabl.mp4"
+      },
+      {
+        "nom": "Robot GIG-Bot 🚓🤖",
+        "descriptionCourte": "Un robot éclaireur autonome",
+        "description": "Conception d'un robot éclaireur en assembleur. Le robot se déplace, clignote, rencontre des obstacles et les évite grâce à des bumper sensors, LEDs, moteurs et des boutons.",
+        "technologies": ["Assembleur"],
+        "lienSiteWeb": "https://berachem.dev/eval-bot/",
+        "lienGitHub": "https://github.com/Berachem/eval-bot",
+        "media": "https://igadvisory.fr/opendata/Demo_GIG-Bot.mp4"
+      },
+      {
+        "nom": "Thèses 📚",
+        "descriptionCourte": "Plateforme répertoriant toutes les thèses soutenues en France depuis 1960",
+        "description": "Conception d'un site Web répertoriant toutes les thèses soutenues en France depuis 1985. Le site permet d'effectuer des recherches avec des graphiques et statistiques en fonction des critères de recherche.",
+        "technologies": ["HTML", "CSS", "JavaScript", "PHP", "Python"],
+        "lienSiteWeb": "https://these.berachem.dev/",
+        "lienRapport": "https://www.data.gouv.fr/fr/datasets/theses-soutenues-en-france-depuis-1985/",
+        "media": "https://berachem.dev/assets/img/these.png"
+      },
+      {
+        "nom": "App Eco-tidien 🌱",
+        "descriptionCourte": "Application mobile pour faire des choix écologiques",
+        "description": "Maquettage d'une application mobile pour l'écologie : Eco-tidien. Une application qui guide dans les choix quotidiens pour le bien de l'écologie et de la planète.",
+        "technologies": ["Figma"],
+        "lienFigma": "https://www.figma.com/file/xyfRBtg92TrSd98cwKN750/Eco-tidien?node-id=0%3A1",
+        "lienRapport": "https://drive.google.com/file/d/1D9wPyUApHtgXigsubJyvIEHDy02rnfgS/view?usp=sharing",
+        "media": "https://berachem.dev/assets/demoeco.mp4"
+      },
+      {
+        "nom": "Loop-Hero ⚔️🔁",
+        "descriptionCourte": "Jeu Roguelike, Deck-building : un Héros bloqué dans une boucle temporelle",
+        "description": "Conception d'un jeu Roguelike, Deck-building nommé Loop Hero. Le jeu est réalisé en JAVA, où un Héros est bloqué dans une boucle temporelle et affronte des monstres pour survivre.",
+        "technologies": ["Java"],
+        "lienGitHub": "https://github.com/Berachem/LoopHero",
+        "lienSiteWeb": "https://berachem.dev/LoopHero/",
+        "media": "https://berachem.dev/assets/demoloop.mp4"
+      },
+      {
+        "nom": "Croisade 🔴⚔️🟢⚔️🔵 (IA)",
+        "descriptionCourte": "Jeu de stratégie avec des factions et IA (algorithmes de plus court chemin)",
+        "description": "Conception d'un jeu de stratégie avec des factions et des algorithmes de plus court chemin. Trois factions (🔴, 🟢, 🔵) s'affrontent, chacune avec une stratégie et une cible particulières.",
+        "technologies": ["Python", "IA"],
+        "lienGitHub": "https://github.com/Berachem/Croisade",
+        "lienSiteWeb": "https://berachem.dev/Croisade/",
+        "lienRapport": "",
+        "media": "https://igadvisory.fr/opendata/Croisade_Trailer.mp4"
+      },
+      {
+        "nom": "Save The Cats",
+        "descriptionCourte": "Jeu de sauvetage de chats dans des villages en feu avec des niveaux variés.",
+        "description": "Vous incarnez un héros dédié au sauvetage de chats égarés dans des villages en proie aux flammes. Votre mission est de localiser ces félins et de les transporter en toute sécurité vers la SafeZone, le tout en visant le temps le plus court possible.",
+        "technologies": ["Unity", "C#"],
+        "lienGitHub": "https://github.com/Berachem/SaveTheCats",
+        "lienSiteWeb": "",
+        "lienRapport": "https://berachem-dev.notion.site/Infographie-3D-compte-rendu-PROJET-SaveTheCats-67c0f6d324fb483a899adb5af8a88c0e",
+        "media": "https://igadvisory.fr/opendata/SaveTheCats/assets/saveTheCatsDemo.mp4"
+      },
+      {
+        "nom": "Space Invaders 👾",
+        "descriptionCourte": "Jeu de Space Invaders en C# avec fonctionnalités multijoueur et boss final.",
+        "description": "Ce projet en C# consiste à développer le célèbre jeu Space Invaders, un classique de l'arcade où le joueur contrôle un vaisseau spatial afin de défendre la Terre contre une invasion extraterrestre. Le projet inclut des fonctionnalités multijoueur, des éléments de décoration visuelle, des sons, des bonus, un boss final et un leaderboard de fin de partie.",
+        "technologies": ["C#"],
+        "lienGitHub": "https://github.com/Berachem/space-invaders",
+        "lienSiteWeb": "https://berachem.dev/space-invaders/",
+        "lienRapport": "https://github.com/Berachem/space-invaders/blob/main/Rapport_Space_Invaders.pdf",
+        "media": "https://igadvisory.fr/opendata/spaceInvaders/space_invader_demo.mp4"
+      },
+      {
+        "nom": "Stratégie de la Martingale (Casino) 🎲",
+        "descriptionCourte": "Aide au gain au Casino avec une stratégie mathématique",
+        "description": "Aide à la mise au Casino avec la stratégie de la Martingale. Implémentation d'un programme indiquant la somme de départ à miser selon une certaine marge d'échecs à la roulette et un total disponible.",
+        "technologies": ["Python"],
+        "lienGitHub": "https://github.com/Berachem/Strategie-maths-casino",
+        "media": "https://berachem.dev/assets/img/martingale.jpg"
+      },
+      {
+        "nom": "Algorithmes Graphes avancés 🌶️",
+        "descriptionCourte": "Conception d'algorithmes en Python en lien avec la Théorie des graphes",
+        "description": "Conception d'algorithmes en Python en lien avec la Théorie des graphes. Implémentation de fonctions telles que la déterminisation, complémentation, minimisation, etc., en collaboration avec Nidal IDRISSI.",
+        "technologies": ["Python"],
+        "lienGitHub": "https://github.com/Berachem/AlgorithmesGraphesAutomates",
+        "lienSiteWeb": "https://berachem.dev/AlgorithmesGraphesAutomates/",
+        "media": "https://medias.pourlascience.fr/api/v1/images/view/5efb0234d286c252eb4f05e6/wide_1300/image.jpg"
+      },
+      {
+        "nom": "NASA pic of the day 🚀",
+        "descriptionCourte": "Affichage de la photo du jour de la NASA",
+        "description": "Affichage de la photo du jour de la NASA. Le site permet de visualiser la photo du jour de la NASA, avec une description et des informations supplémentaires.",
+        "technologies": ["PHP", "JavaScript"],
+        "lienGitHub": "https://github.com/Berachem/nasa",
+        "lienSiteWeb": "https://nasa.berachem.dev/",
+        "media": "https://as1.ftcdn.net/v2/jpg/01/01/42/64/1000_F_101426449_2mhwexDmrvGW7JWT94jPeOZble75zFmr.jpg"
+      }, 
+      {
+        "nom": "Back Office Hotel-Ski ⛷️",
+        "descriptionCourte": "Gestion des réservations d'un hôtel dans une station de ski",
+        "description": "Conception d'un site Web pour un hôtel dans une station de ski. Le site, couplé à une base de données sous PostgreSQL, permet de gérer les réservations des clients et les besoins du manager de l'hôtel.",
+        "technologies": ["PHP", "MySQL", "PostgreSQL"],
+        "lienGitHub": "https://github.com/Berachem/Ski-Low-Cost",
+        "lienSiteWeb": "https://perso-etudiant.u-pem.fr/~berachem.markria/Ski/",
+        "lienRapport": "https://drive.google.com/file/d/1Oj4rOfNvkFu8jdusTCdNx7rJVqq2cyIN/view?usp=sharing",
+        "media": "https://berachem.dev/assets/demozarza.mp4"
+      }
+      
+  
+    ]
+
+
+  }
