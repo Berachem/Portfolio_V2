@@ -17,3 +17,8 @@
 
 ## Crypto
 - [ ] Rajouter les anciens charts automatiques 
+
+
+## Déploiement
+
+- [ ] Avant le npm i ou npm run build , faire en sorte de pull les fichiers MP4 du Git LFS
