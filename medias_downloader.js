@@ -1,7 +1,8 @@
 import fs from 'fs';
 import http from 'http';
+import path from 'path';
 
-
+// Base URL et liste des fichiers à télécharger
 const baseUrl = 'http://vwryeac.cluster030.hosting.ovh.net/IG/opendata/assets/projects_videos/';
 const videos = [
     'countdown.webm',
@@ -19,16 +20,26 @@ const videos = [
     'space_invader_demo.mp4'
 ];
 
+// Chemin vers le répertoire des vidéos
+const videosDir = path.resolve('./public/videos');
+
+// Vérifier si le dossier existe, sinon le créer
+if (!fs.existsSync(videosDir)) {
+    fs.mkdirSync(videosDir, { recursive: true });
+    console.log(`Created directory: ${videosDir}`);
+}
+
+// Télécharger chaque fichier
 videos.forEach((fileName) => {
     const url = `${baseUrl}${fileName}`;
-    const path = `./public/videos/${fileName}`;
+    const filePath = path.join(videosDir, fileName);
     
     http.get(url, (response) => {
         if (response.statusCode === 200) {
-            const file = fs.createWriteStream(path);
+            const file = fs.createWriteStream(filePath);
             response.pipe(file);
             file.on('finish', () => {
-                console.log(`Downloaded: ${path}`);
+                console.log(`Downloaded: ${filePath}`);
                 file.close();
             });
         } else {
