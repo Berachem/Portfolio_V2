@@ -21,7 +21,7 @@ const videos = [
 ];
 
 // Chemin vers le répertoire des vidéos
-const videosDir = path.resolve('./public/videos');
+const videosDir = path.resolve('src/assets/videos');
 
 // Vérifier si le dossier existe, sinon le créer
 if (!fs.existsSync(videosDir)) {
