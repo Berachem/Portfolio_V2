@@ -50,7 +50,7 @@ import ZooggleRealisticIngame from '../assets/img/projects/zoo-ggle/realistic_in
 import ZooggleRealistic from '../assets/img/projects/zoo-ggle/realistic.jpg';
 import ZooggleTrello from '../assets/img/projects/zoo-ggle/trello_zooggle.png';
 //import ZooggleLogoBlack from '../assets/img/projects/zoo-ggle/zooggle-black.png';
-import ZooggleV1 from '../assets/img/projects/zoo-ggle/zooggle_v1.jpg';
+import ZooggleV1 from '../assets/img/projects/zoo-ggle/Zooggle_v1.jpg';
 //import ZooggleLogoWhite from '../assets/img/projects/zoo-ggle/zooggle.png';
 
 // Thèses
