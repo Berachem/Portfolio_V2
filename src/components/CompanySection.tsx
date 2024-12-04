@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { Company } from "../types";
 
 interface CompanySectionProps {
@@ -6,33 +5,17 @@ interface CompanySectionProps {
 }
 
 export const CompanySection = ({ companies }: CompanySectionProps) => {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
-  useEffect(() => {
-    if (companies.length === 0) return;
-
-    const interval = setInterval(() => {
-      const randomIndex = Math.floor(Math.random() * companies.length);
-      setHoveredIndex(randomIndex);
-
-      // Reset hover effect after a short delay
-      setTimeout(() => {
-        setHoveredIndex(null);
-      }, 800); // Duration of hover effect
-    }, 1500); // Interval between hover effects
-
-    return () => clearInterval(interval);
-  }, [companies]);
-
   return (
-    <div className="flex flex-wrap gap-8 justify-center p-6">
-      {companies.map((company, index) => (
+    <div className="flex flex-wrap gap-6 justify-center p-4">
+      {companies.map((company) => (
         <img
           key={company.name}
           src={company.logo}
           alt={company.name}
-          className={`grayscale transition-all duration-300 w-15 h-24 object-contain mx-auto ${
-            hoveredIndex === index ? "grayscale-0 scale-110" : ""
+          className={`w-32 h-16 sm:w-14 sm:h-20 md:w-60 md:h-24 object-contain mx-auto ${
+            window.innerWidth < 640
+              ? ""
+              : "grayscale hover:grayscale-0 transition-all duration-300"
           }`}
         />
       ))}

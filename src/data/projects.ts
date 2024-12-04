@@ -2,20 +2,20 @@ import { Project } from '../types';
 
 
 // ALL DEMOS
-//import Countdown from '../assets/img/projects/videos/countdown.webm';
-import CroisadeTrailer from '../assets/img/projects/videos/Croisade_Trailer.mp4';
-import DemoCarbuviz from '../assets/img/projects/videos/Demo_Carbuviz.mp4';
-import DemoGIGBot from '../assets/img/projects/videos/Demo_GIG-Bot.mp4';
-import DemoAzul from '../assets/img/projects/videos/demoazul.mp4';
-import DemoEco from '../assets/img/projects/videos/demoeco.mp4';
-//import DemoGraphes from '../assets/img/projects/videos/demographes.mp4';
-import DemoKontabl from '../assets/img/projects/videos/demokontabl.mp4';
-import DemoLoop from '../assets/img/projects/videos/demoloop.mp4';
-import DemoUnesco from '../assets/img/projects/videos/demounesco.mp4';
-import DemoZarza from '../assets/img/projects/videos/demozarza.mp4';
-//import RapizzTrailer from '../assets/img/projects/videos/Rapizz_Trailer.mp4';
-import SaveTheCatsDemo from '../assets/img/projects/videos/saveTheCatsDemo.mp4';
-import SpaceInvaderDemo from '../assets/img/projects/videos/space_invader_demo.mp4';
+//import Countdown from '/videos/countdown.webm';
+import CroisadeTrailer from '/videos/Croisade_Trailer.mp4';
+import DemoCarbuviz from '/videos/Demo_Carbuviz.mp4';
+import DemoGIGBot from '/videos/Demo_GIG-Bot.mp4';
+import DemoAzul from '/videos/demoazul.mp4';
+import DemoEco from '/videos/demoeco.mp4';
+//import DemoGraphes from '/videos/demographes.mp4';
+import DemoKontabl from '/videos/demokontabl.mp4';
+import DemoLoop from '/videos/demoloop.mp4';
+import DemoUnesco from '/videos/demounesco.mp4';
+import DemoZarza from '/videos/demozarza.mp4';
+//import RapizzTrailer from '/videos/Rapizz_Trailer.mp4';
+import SaveTheCatsDemo from '/videos/saveTheCatsDemo.mp4';
+import SpaceInvaderDemo from '/videos/space_invader_demo.mp4';
 
 // Unesco
 import UnescoAd from '../assets/img/projects/unesco/ad.jpg';
