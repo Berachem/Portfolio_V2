@@ -20,7 +20,7 @@ const InternationalChoiceHelper: React.FC = () => {
   const filterableColumns = ["ZONE", "PAYS", "VILLE"];
 
   // Chemin du fichier CSV local (dans le dossier public)
-  const csvFilePath = "http://vwryeac.cluster030.hosting.ovh.net/IG/opendata/international/Liste_Destinations_2025.csv"; // Placez votre fichier CSV dans public/assets/
+  const csvFilePath = "src/data/Liste_Destinations_2025.csv"; // Placez votre fichier CSV dans public/assets/
 
   // Charger le fichier CSV localement avec Axios
   useEffect(() => {
@@ -277,7 +277,7 @@ const InternationalChoiceHelper: React.FC = () => {
           )}
         </>
       )}
-
+      
 
       <MapInternationalHelper data={filteredData} />
 
