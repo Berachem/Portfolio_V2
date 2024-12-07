@@ -36,7 +36,7 @@ const ScrollDownArrow: React.FC = () => {
             {/* Outer Circle */}
             <div
                 onClick={handleClick}
-                className="relative w-24 h-24 animate-fadeInDown cursor-pointer"
+                className="relative w-24 h-24 animate-fadeInDown cursor-pointer z-50"
             >
                 <div className="absolute w-24 h-24 bg-blue-600 opacity-50 rounded-full animate-zoomIn"></div>
 

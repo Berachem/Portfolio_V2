@@ -8,16 +8,16 @@ interface ProjectCardProps {
     project: Project;
 }
 
+export const iconMap: Record<string, any> = {
+    github: faGithub,
+    website: faChrome,
+    documentation: faFileAlt
+};
+
 export const ProjectCard = ({ project }: ProjectCardProps) => {
     const isVideo =
         project.thumbnail?.endsWith('.mp4') ||
         project.thumbnail?.endsWith('.webm');
-
-    const iconMap: Record<string, any> = {
-        github: faGithub,
-        website: faChrome,
-        documentation: faFileAlt
-    };
 
     return (
         <Link

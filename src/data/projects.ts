@@ -245,7 +245,7 @@ export const projects: Project[] = [
   },
   {
     id: 'croisade',
-    title: "Croisade 🔴⚔️🟢⚔️🔵",
+    title: "Croisade ⚔️🎨",
     description: "Jeu de stratégie basé sur des algorithmes IA de plus court chemin.",
     longDescription: "Création d'un jeu où trois factions (🔴, 🟢, 🔵) s'affrontent. Chaque faction suit une stratégie IA avancée pour vaincre les adversaires.",
     technologies: ["Python"],
@@ -260,7 +260,7 @@ export const projects: Project[] = [
   },
   {
     id: 'save-the-cats',
-    title: "Save The Cats",
+    title: "Save The Cats 🐈",
     description: "Jeu de sauvetage de chats dans des villages en feu avec des niveaux variés.",
     longDescription: "Vous incarnez un héros sauvant des chats pris dans des incendies. Le but est de les transporter en sécurité dans le temps le plus court possible.",
     technologies: ["Unity", "C#"],
