@@ -26,9 +26,16 @@ import {
   faCheckCircle,
   faCode,
   faCodeBranch,
+  faLanguage,
 } from "@fortawesome/free-solid-svg-icons";
 import ScrollDownArrow from "../components/utils/ScrollDownArrow";
 import {  useState } from "react";
+
+import YSLogo from "../assets/img/organizations/ysl.png";
+import LVLogo from "../assets/img/organizations/LV.jpeg";
+import BNFLogo from "../assets/img/organizations/BNF.png";
+import PicassoLogo from "../assets/img/organizations/picasso.png";
+import IDFLogo from "../assets/img/organizations/IDF.png";
 
 const experiences: Experience[] = [
   {
@@ -38,6 +45,8 @@ const experiences: Experience[] = [
     description:
       "Application liée à la cartographie du réseau et chantiers électriques de la région Île de France-Est",
     technologies: ["React", "TypeScript", "Symfony", "AWS", "PostgreSQL"],
+    partners: [ {"name" : "Région Île de France", "url": IDFLogo} ],
+ 
     logo: Logo_Enedis,
     isNew: true,
   },
@@ -48,6 +57,8 @@ const experiences: Experience[] = [
     description:
       "Développement d'applications mobiles pour des clients comme Yves Saint Laurent, Musée Picasso, BNF, etc.",
     technologies: ["Flutter", "Dart", "Python"],
+    partners: [ {"name" : "Bibliothèque Nationale de France", "url": BNFLogo}, {"name": "Musée Picasso", "url": PicassoLogo} ,
+    { "name": "Yves Saint Laurent", "url": YSLogo }, { "name": "Louis Vuitton", "url": LVLogo } ],
     logo: Logo_AA_Partners,
     isNew: false,
   },
@@ -57,7 +68,7 @@ const experiences: Experience[] = [
     period: "septembre 2021 - juillet 2022",
     description:
       "Conception d'un site web en partenariat avec l'UNESCO pour valoriser le patrimoine de l'Île de la Cité à Paris.",
-    technologies: ["HTML", "CSS", "JavaScript", "PHP"],
+    technologies: ["JavaScript", "PHP", faLanguage],
     logo: Logo_Unesco,
     isNew: false,
   },
@@ -210,7 +221,7 @@ export const DevHomePage = () => {
         <div className="container mx-auto px-4 text-center">
           <img
             src="https://berachem.dev/assets/img/moi_bg_navy.png"
-            alt="Berachem Markria"
+            alt="Berachem MARKRIA"
             className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-full mx-auto mb-6 sm:mb-8 shadow-lg hover:scale-105 transition-transform animate-border inline-block bg-white bg-gradient-to-r from-blue-600 via-purple-500 to-white-500 bg-[length:400%_400%] p-1"
             onClick={() => window.location.replace("/crypto")}
           />
@@ -263,7 +274,7 @@ export const DevHomePage = () => {
         {/*  <Section title="À propos">
           <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 transform hover:scale-[1.02] transition-transform duration-300">
             <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-              Bonjour ! Je m'appelle Berachem Markria, j'ai 21 ans et je suis ingénieur apprenti en informatique. 
+              Bonjour ! Je m'appelle Berachem MARKRIA, j'ai 21 ans et je suis ingénieur apprenti en informatique. 
               Passionné par le développement logiciel, je me spécialise dans la création d'applications web modernes 
               et performantes.
             </p>

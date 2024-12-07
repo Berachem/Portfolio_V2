@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBitcoin, faEthereum } from '@fortawesome/free-brands-svg-icons';
 import { faCoins } from '@fortawesome/free-solid-svg-icons';
 import Footer from '../components/utils/Footer';
+import TradingViewWidget from '../components/crypto/TradingViewWidget';
+import PresentationsSlides from '../components/crypto/PresentationsSlides';
 
 const cryptoProjects = [
   {
@@ -53,7 +55,7 @@ export const CryptoHomePage = () => {
           <div className="flex items-center justify-between">
             <div className="max-w-2xl">
               <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                Berachem Markria
+                Berachem MARKRIA
                 <span className="block text-2xl md:text-3xl mt-2 text-yellow-200">
                   Spéculateur en Crypto-monnaies & Passionné des nouvelles technologies
                 </span>
@@ -91,15 +93,36 @@ export const CryptoHomePage = () => {
                     </h3>
                     <span className="text-sm text-gray-500 dark:text-gray-400">
                       {project.symbol}
+                    
                     </span>
                   </div>
                 </div>
                 <p className="text-gray-600 dark:text-gray-300">{project.description}</p>
+                <div className="mt-4 h-96">
+                <TradingViewWidget  key="BTCUSDT"  market={project.symbol + "USDT"} />
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
+
+{/*      
+      <h2 className="text-3xl font-bold mb-12 text-center text-gray-800 dark:text-white">
+        Suivi des cours des cryptos
+      </h2>
+      <div className="container mx-auto px-4 py-8 h-96">
+          
+          <TradingViewWidget  key="BTCUSDT"  market='BTCUSDT' />
+          <TradingViewWidget  key="ETHUSDT"  market='ETHUSDT' />
+          <TradingViewWidget  key="BNBUSDT"  market='BNBUSDT' />
+          <TradingViewWidget  key="CHZUSDT"  market='CHZUSDT' />
+        </div> */}
+
+        {/* Mes présentations sur le sujet */}
+      {/*   <section className="py-16">
+          <PresentationsSlides />
+        </section> */}
 
       {/* Resources Section */}
       <section className="py-16">

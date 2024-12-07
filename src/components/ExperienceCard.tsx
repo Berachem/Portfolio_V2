@@ -40,20 +40,44 @@ export const ExperienceCard = ({ experience }: ExperienceCardProps) => {
       <p className="text-sm sm:text-md text-gray-600 dark:text-gray-300 mb-4">
         {experience.description}
       </p>
+      <div className="justify-between">
       <div className="flex flex-wrap gap-2">
         {experience.technologies.map((tech) => (
-          <span
-            key={tech}
-            className="px-2 sm:px-3 py-1 text-sm text-gray-700 dark:text-gray-300 flex items-center"
-          >
-            <img
-              src={`https://skillicons.dev/icons?i=${tech.toLowerCase()}`}
-              alt={tech}
-              className="inline-block h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10"
-            />
-          </span>
+           <span
+           key={tech as string}
+           className="flex items-center px-2 sm:px-3 py-1 rounded-full text-sm"
+         >
+           {typeof tech === "string" ? 
+           <img
+             src={`https://skillicons.dev/icons?i=${tech.toLowerCase()}`}
+             alt={tech}
+             className="inline-block h-6 w-6 sm:h-8 sm:w-8 icon-animated"
+           /> : <FontAwesomeIcon icon={tech} className="text-xl sm:text-base sm:mr-1 text-gray-600 dark:text-gray-300" />}
+     
+       
+         </span>
         ))}
-      </div>
+
+{
+  experience.partners && experience.partners.length > 0 && (
+
+<div className="flex items-center justify-center">
+  <h4 className="text-sm sm:text-md font-semibold text-gray-800 dark:text-white mx-5"> pour</h4>
+
+        {experience.partners.map((partner) => (
+                <img
+                  key={partner.name}
+                  src={partner.url}
+                  alt={partner.name}
+                  className="h-8 sm:h-10 md:h-12 object-contain ml-2"
+                />
+              ))}
+              </div>
+  )
+}
+      </ div>
+
+    </div>
     </div>
   );
 };

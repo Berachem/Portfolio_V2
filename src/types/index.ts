@@ -31,7 +31,8 @@ export interface Experience {
   role: string;
   period: string;
   description: string;
-  technologies: string[];
+  technologies: (string | IconDefinition)[];
+  partners?: Record<string, string>[];
   logo?: string ;
   isNew?: boolean;
 }

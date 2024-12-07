@@ -2,17 +2,17 @@
 - [x] Créer un projet sur Github
 - [x] Initialiser le projet avec un README.md
 - [x] Base du projet React, Typescript, Vite
-- [ ] Rajouter les entités liés sur les projets (Unesco ...) ET sur les Expériences pro (YSL, Chanel, Picasso....)
+- [x] Rajouter les entités liés sur les projets (Unesco ...) ET sur les Expériences pro (YSL, Chanel, Picasso....)
 - [ ] Changer le détails d'un projet pour qu'il soit plus complet et agréable à lire
    - possibilité de passer d'un projet à un autre
-- [ ] hover carroussel project effect
+- [x] hover carroussel project effect
 - [ ] Fix redirection quand on clique sur un projet (conflit de click)
 - [ ] Ajouter les balises de référencement
 - [ ] Ajouter un favicon
-- [ ] Améliorer UI Mérites
+- [x] Améliorer UI Mérites
 - [ ] Ajouter un bouton pour télécharger le CV
-- [ ] Responsive de chaque bloc
-- [ ] Robustesse de changement de thème
+- [x] Responsive de chaque bloc
+- [x] Robustesse de changement de thème
 
 
 ## Crypto
@@ -21,4 +21,4 @@
 
 ## Déploiement
 
-- [ ] Avant le npm i ou npm run build , faire en sorte de pull les fichiers MP4 du Git LFS
+- [x] Avant le npm i ou npm run build , faire en sorte de pull les fichiers MP4 du Git LFS

@@ -11,7 +11,7 @@ export const CompanySection = ({ companies }: CompanySectionProps) => {
         <img
           key={company.name}
           src={company.logo}
-          alt={company.name}aa
+          alt={company.name}
           className={`w-32 h-16 sm:w-14 sm:h-20 md:w-60 md:h-24 object-contain mx-auto ${
             window.innerWidth < 640
               ? ""
