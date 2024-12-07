@@ -62,7 +62,7 @@ export const ExperienceCard = ({ experience }: ExperienceCardProps) => {
   experience.partners && experience.partners.length > 0 && (
 
 <div className="flex items-center justify-center">
-  <h4 className="text-sm sm:text-md font-semibold text-gray-800 dark:text-white mx-5"> pour</h4>
+  <h4 className="text-2xl  font-semibold text-black dark:text-white">|</h4>
 
         {experience.partners.map((partner) => (
                 <img

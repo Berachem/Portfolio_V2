@@ -57,7 +57,7 @@ const experiences: Experience[] = [
     description:
       "Développement d'applications mobiles pour des clients comme Yves Saint Laurent, Musée Picasso, BNF, etc.",
     technologies: ["Flutter", "Dart", "Python"],
-    partners: [ {"name" : "Bibliothèque Nationale de France", "url": BNFLogo}, {"name": "Musée Picasso", "url": PicassoLogo} ,
+    partners: [ /* {"name" : "Bibliothèque Nationale de France", "url": BNFLogo},  */{"name": "Musée Picasso", "url": PicassoLogo} ,
     { "name": "Yves Saint Laurent", "url": YSLogo }, { "name": "Louis Vuitton", "url": LVLogo } ],
     logo: Logo_AA_Partners,
     isNew: false,
