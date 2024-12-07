@@ -149,7 +149,7 @@ const skills: Skill[] = [
     },
     {
         category: 'Certifications',
-        items: [['TOEIC (B2/C1)', TOEIC]]
+        items: [{ name: 'TOEIC (B2/C1)', url: TOEIC }]
     }
 ];
 

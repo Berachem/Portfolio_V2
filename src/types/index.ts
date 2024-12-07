@@ -49,7 +49,7 @@ export interface Education {
 
 export interface Skill {
   category: string;
-  items: string[] | string[][];
+  items:  (string | { name: string; url: string })[];
 }
 
 export interface Interest {
