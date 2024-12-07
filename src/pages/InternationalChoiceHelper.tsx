@@ -54,6 +54,47 @@ const InternationalChoiceHelper: React.FC = () => {
     fetchCsv();
   }, []);
 
+
+  useEffect(() => {
+    const filtered = data.filter((row) => {
+      // Vérifier les filtres dynamiques
+      const matchesFilters = filterableColumns.every(
+        (column) =>
+          !filters[column] ||
+          row[column]?.toString().toLowerCase().includes(filters[column].toLowerCase())
+      );
+  
+      // Vérifier le filtre Formation
+      const matchesFormation =
+        !formation || (row[formation] && row[formation].toString().trim() !== "");
+  
+      // Vérifier le filtre Category
+      const matchesCategory = (() => {
+        if (!category) return true; // Si aucune catégorie n'est sélectionnée
+        const value = row["Category (indicative) C1/C2/C3"]?.toString().toUpperCase();
+        if (!value) return false;
+  
+        switch (category) {
+          case "C1":
+            return value.startsWith("C1") || value.startsWith("C2") || value.startsWith("C3");
+          case "C2":
+            return value.startsWith("C2") || value.startsWith("C3");
+          case "C3":
+            return value.startsWith("C3");
+          default:
+            return false;
+        }
+      })();
+  
+      return matchesFilters && matchesFormation && matchesCategory;
+    });
+
+    console.log("filtered", filtered);
+  
+    setFilteredData(filtered);
+  }, [filters, formation, category, data]);
+  
+
   // Mettre à jour les filtres
   const handleFilterChange = (column: string, value: string) => {
     setFilters((prevFilters) => ({
@@ -63,29 +104,6 @@ const InternationalChoiceHelper: React.FC = () => {
     setCurrentPage(1); // Réinitialiser à la première page après un filtrage
   };
 
-  // Appliquer les filtres et les filtres personnalisés Formation et Category
-  useEffect(() => {
-    const filtered = data.filter((row) => {
-      // Vérifier les filtres dynamiques
-      const matchesFilters = filterableColumns.every(
-        (column) =>
-          !filters[column] ||
-          row[column]?.toString().toLowerCase().includes(filters[column].toLowerCase())
-      );
-
-      // Vérifier le filtre Formation
-      const matchesFormation =
-        !formation || (row[formation] && row[formation].toString().trim() !== "");
-
-      // Vérifier le filtre Category
-      const matchesCategory =
-        !category || row["Category (indicative) C1/C2/C3"] === category;
-
-      return matchesFilters && matchesFormation && matchesCategory;
-    });
-
-    setFilteredData(filtered);
-  }, [filters, formation, category, data]);
 
   // Pagination : Obtenir les données pour la page actuelle
   const paginatedData = filteredData.slice(
@@ -262,7 +280,7 @@ const InternationalChoiceHelper: React.FC = () => {
                 Précédent
               </button>
               <span className="dark:text-gray-300">
-                Page {currentPage} sur {totalPages}
+                Page {currentPage} sur {totalPages} -- ({filteredData.length} résultats)
               </span>
               <button
                 onClick={() =>
@@ -273,7 +291,10 @@ const InternationalChoiceHelper: React.FC = () => {
               >
                 Suivant
               </button>
+
+             
             </div>
+            
           )}
         </>
       )}
