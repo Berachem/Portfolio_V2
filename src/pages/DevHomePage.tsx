@@ -1,13 +1,13 @@
 import { Github, Linkedin, Mail, Phone } from "lucide-react";
-import { Section } from "../components/Section";
-import { ThemeToggle } from "../components/ThemeToggle";
+import { Section } from "../components/sections/Section";
+import { ThemeToggle } from "../components/utils/ThemeToggle";
 import { ProjectCard } from "../components/ProjectCard";
 import { ExperienceCard } from "../components/ExperienceCard";
 import { EducationCard } from "../components/EducationCard";
-import { SkillSection } from "../components/SkillSection";
-import { InterestSection } from "../components/InterestSection";
-import { MeritSection } from "../components/MeritSection";
-import { CompanySection } from "../components/CompanySection";
+import { SkillSection } from "../components/sections/SkillSection";
+import { InterestSection } from "../components/sections/InterestSection";
+import { MeritSection } from "../components/sections/MeritSection";
+import { CompanySection } from "../components/sections/CompanySection";
 import { projects } from "../data/projects";
 
 import Logo_AA_Partners from "../assets/img/organizations/aa.png";
@@ -15,21 +15,20 @@ import Logo_Enedis from "../assets/img/organizations/enedis.png";
 import Logo_Unesco from "../assets/img/organizations/unesco_filled.png";
 import { Experience, Interest, Skill } from "../types";
 import { Carousel } from "flowbite-react";
-import StatsSection from "../components/StatsSection";
-import Footer from "../components/Footer";
-import ScrollProgressBar from "../components/ScrollDownProgressBar";
+import StatsSection from "../components/sections/StatsSection";
+import Footer from "../components/utils/Footer";
+import ScrollProgressBar from "../components/utils/ScrollDownProgressBar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBitcoin } from "@fortawesome/free-brands-svg-icons";
 
 import TOEIC from "../assets/img/organizations/toeic.png";
 import {
-  faCheck,
   faCheckCircle,
   faCode,
   faCodeBranch,
 } from "@fortawesome/free-solid-svg-icons";
-import ScrollDownArrow from "../components/ScrollDownArrow";
-import { useEffect, useState } from "react";
+import ScrollDownArrow from "../components/utils/ScrollDownArrow";
+import {  useState } from "react";
 
 const experiences: Experience[] = [
   {
@@ -38,7 +37,7 @@ const experiences: Experience[] = [
     period: "septembre 2023 - 2026",
     description:
       "Application liée à la cartographie du réseau et chantiers électriques de la région Île de France-Est",
-    technologies: ["React", "TypeScript", "Symfony"],
+    technologies: ["React", "TypeScript", "Symfony", "AWS", "PostgreSQL"],
     logo: Logo_Enedis,
     isNew: true,
   },
@@ -296,6 +295,7 @@ export const DevHomePage = () => {
             <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
               {projects.map((_, index) => (
                 <div
+                  onClick={() => setCurrentIndex(index)}
                   key={index}
                   className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-colors duration-300 ${
                     index === currentIndex

@@ -1,4 +1,4 @@
-import { Merit } from "../types";
+import { Merit } from "../../types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrophy } from "@fortawesome/free-solid-svg-icons";
 

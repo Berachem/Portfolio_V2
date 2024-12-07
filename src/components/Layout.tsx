@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom';
-import { ThemeToggle } from './ThemeToggle';
+import { ThemeToggle } from './utils/ThemeToggle';
 
 export const Layout = () => {
   return (

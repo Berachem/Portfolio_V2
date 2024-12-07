@@ -1,3 +1,4 @@
+
 import { Project } from '../types';
 
 
@@ -24,6 +25,9 @@ import UnescoNotreDame from '../assets/img/projects/unesco/notre_dame.jpg';
 import UnescoPalais from '../assets/img/projects/unesco/palais_justice.jpg';
 import UnescoPontNeuf from '../assets/img/projects/unesco/pont_neuf.jpg';
 import UnescoSainteChapelle from '../assets/img/projects/unesco/sainte_chapelle.jpg';
+import UnescoLogo from '../assets/img/organizations/unesco.png';
+import UnescoBrainstorming from '../assets/img/projects/unesco/brainstorming.png';
+import UnescoGantt from '../assets/img/projects/unesco/gantt.png';
 
 
 // Eco-tidien
@@ -38,6 +42,8 @@ import KontablStats from '../assets/img/projects/kontabl/stats.jpg';
 // Loop Hero
 import LoopHeroFighting from '../assets/img/projects/loophero/fighting.jpg';
 import LoopHeroIngame from '../assets/img/projects/loophero/ingame.jpg';
+import LoopHeroPhase1 from '../assets/img/projects/loophero/loophero_phase1.png';
+import LoopHeroPhase2 from '../assets/img/projects/loophero/loophero_phase2.png';
 
 // Zoo-ggle
 import ZooggleHome from '../assets/img/projects/zoo-ggle/zoo_ggle_landing.png';
@@ -55,12 +61,31 @@ import ZooggleV1 from '../assets/img/projects/zoo-ggle/Zooggle_v1.jpg';
 
 // Thèses
 import ThesesHome from '../assets/img/projects/theses/these_home.png';
+import TheseLogo from '../assets/img/projects/theses/theses_logo.png';
 
 // Martingale
 import Martingale from '../assets/img/projects/martingale/martingale.jpg';
 
 // Rapizz
 import RapizzHome from '../assets/img/projects/rapizz/rapizz_home.png';
+import { faChartSimple, faLanguage, faNetworkWired, faRobot } from '@fortawesome/free-solid-svg-icons';
+import {  faSpaceAwesome } from '@fortawesome/free-brands-svg-icons';
+
+// Nasa
+import NasaLogo from '../assets/img/organizations/nasa.png';
+
+// DHCP
+import DHCP1 from '../assets/img/projects/dhcp/dhcp-1.png';
+import DHCP2 from '../assets/img/projects/dhcp/dhcp-2.png';
+import DHCP3 from '../assets/img/projects/dhcp/dhcp-3.png';
+import DHCP4 from '../assets/img/projects/dhcp/dhcp-4.png';
+import DHCPSchema from '../assets/img/projects/dhcp/dhcp-diag.png';
+
+// SKI
+import SkiMCD from '../assets/img/projects/ski/MCD.png';
+import SkiMLD from '../assets/img/projects/ski/MLD.png';
+
+
 
 export const projects: Project[] = [
   {
@@ -68,15 +93,18 @@ export const projects: Project[] = [
     title: "Île de la Cité, Paris 🏛️🌍",
     description: "Chef de projet pour la conception d'un site web valorisant le patrimoine mondial de l'Île de la Cité à Paris.",
     longDescription: "Conception d'un site Web pour valoriser un patrimoine mondial en partenariat avec l'UNESCO, incluant la cathédrale Notre-Dame et l'ancien Palais de Justice.",
-    technologies: ["HTML", "CSS", "JavaScript", "PHP"],
+    technologies: ["PHP", "JavaScript", faLanguage ],
     thumbnail: DemoUnesco,
+    partners: [{ name: "UNESCO", url: UnescoLogo }],
     gallery: [{ media: DemoUnesco, caption: "Démonstration du projet UNESCO" },
               { media: UnescoHome, caption: "Page d'accueil du site" },
               { media: UnescoNotreDame, caption: "Cathédrale Notre-Dame" },
               { media: UnescoPalais, caption: "Palais de Justice" },
               { media: UnescoPontNeuf, caption: "Pont Neuf" },
               { media: UnescoSainteChapelle, caption: "Sainte-Chapelle" },
-              { media: UnescoAd, caption: "Publicité du site" }],
+              { media: UnescoAd, caption: "Publicité du site" },
+              { media: UnescoBrainstorming, caption: "Brainstorming du projet" },
+              { media: UnescoGantt, caption: "Diagramme de Gantt" }],
   
     role: "Chef de Projet",
     duration: "6 mois",
@@ -115,7 +143,7 @@ export const projects: Project[] = [
     title: "Azul Game (IA)",
     description: "Jeu de plateau Azul avec une IA intégrée.",
     longDescription: "Adaptation du jeu de plateau Azul en Python avec une IA capable de jouer à différents niveaux de difficulté. Intégration d'un système de sauvegarde et d'une interface graphique.",
-    technologies: ["Python", "Tkinter", "IA"],
+    technologies: ["Python"],
     thumbnail: DemoAzul,
     gallery: [{ media: DemoAzul, caption: "Gameplay Azul Game" }],
     role: "Développeur Principal",
@@ -151,7 +179,7 @@ export const projects: Project[] = [
     title: "Robot GIG-Bot 🚓🤖",
     description: "Conception d'un robot éclaireur autonome.",
     longDescription: "Création d'un robot autonome qui se déplace, détecte et évite des obstacles grâce à des capteurs, LEDs, et des moteurs.",
-    technologies: ["Assembleur"],
+    technologies: ["githubactions", faRobot],
     thumbnail: DemoGIGBot,
     gallery: [{ media: DemoGIGBot, caption: "Prototype du robot GIG-Bot" }],
     role: "Développeur Principal",
@@ -166,8 +194,9 @@ export const projects: Project[] = [
     title: "Thèses 📚",
     description: "Plateforme répertoriant toutes les thèses soutenues en France depuis 1960.",
     longDescription: "Site web permettant de rechercher et de visualiser des thèses soutenues en France. Inclut des graphiques et statistiques pour une analyse approfondie.",
-    technologies: ["HTML", "CSS", "JavaScript", "PHP", "Python"],
+    technologies: ["PHP", "JavaScript", "Python"],
     thumbnail: ThesesHome,
+    partners: [{ name: "Thèses", url: TheseLogo }],
     gallery: [{ media: ThesesHome, caption: "Interface utilisateur du site Thèses" }],
     role: "Développeur Full-Stack",
     duration: "6 mois",
@@ -199,8 +228,13 @@ export const projects: Project[] = [
     technologies: ["Java"],
     thumbnail: DemoLoop,
     gallery: [{ media: DemoLoop, caption: "Capture d'écran de Loop-Hero" },
+              { media: LoopHeroPhase1, caption: "Phase 1 du jeu" },
+              { media: LoopHeroPhase2, caption: "Phase 2 du jeu" },
               { media: LoopHeroIngame, caption: "Jeu Loop-Hero" },
-              { media: LoopHeroFighting, caption: "Combat dans Loop-Hero" }],
+              { media: LoopHeroFighting, caption: "Combat dans Loop-Hero" },
+              ],
+
+
 
     role: "Développeur Principal",
     duration: "5 mois",
@@ -214,7 +248,7 @@ export const projects: Project[] = [
     title: "Croisade 🔴⚔️🟢⚔️🔵",
     description: "Jeu de stratégie basé sur des algorithmes IA de plus court chemin.",
     longDescription: "Création d'un jeu où trois factions (🔴, 🟢, 🔵) s'affrontent. Chaque faction suit une stratégie IA avancée pour vaincre les adversaires.",
-    technologies: ["Python", "IA"],
+    technologies: ["Python"],
     thumbnail: CroisadeTrailer,
     gallery: [{ media: CroisadeTrailer, caption: "Démonstration Croisade" }],
     role: "Développeur IA",
@@ -243,8 +277,9 @@ export const projects: Project[] = [
     title: "NASA pic of the day 🚀",
     description: "Affichage de la photo du jour de la NASA.",
     longDescription: "Le site permet de visualiser la photo du jour de la NASA, avec une description et des informations supplémentaires.",
-    technologies: ["PHP", "JavaScript"],
+    technologies: ["PHP", "JavaScript", faSpaceAwesome],
     thumbnail: "https://as1.ftcdn.net/v2/jpg/01/01/42/64/1000_F_101426449_2mhwexDmrvGW7JWT94jPeOZble75zFmr.jpg",
+    partners: [{ name: "NASA", url: NasaLogo }],
     gallery: [{ media: "https://as1.ftcdn.net/v2/jpg/01/01/42/64/1000_F_101426449_2mhwexDmrvGW7JWT94jPeOZble75zFmr.jpg", caption: "Exemple d'affichage de l'image du jour." }],
     role: "Développeur Full-Stack",
     duration: "1 mois",
@@ -260,13 +295,15 @@ export const projects: Project[] = [
     longDescription: "Conception d'un site Web pour un hôtel dans une station de ski. Le site, couplé à une base de données sous PostgreSQL, permet de gérer les réservations des clients et les besoins du manager de l'hôtel.",
     technologies: ["PHP", "MySQL", "PostgreSQL"],
     thumbnail: DemoZarza,
-    gallery: [{ media: DemoZarza, caption: "Interface de gestion des réservations." }],
+    gallery: [{ media: DemoZarza, caption: "Interface de gestion des réservations." } ,
+              { media: SkiMCD, caption: "Modèle Conceptuel de Données" },
+              { media: SkiMLD, caption: "Modèle Logique de Données" }],
     role: "Développeur Full-Stack",
     duration: "3 mois",
     links: {
         github: "https://github.com/Berachem/Ski-Low-Cost",
         website: "https://perso-etudiant.u-pem.fr/~berachem.markria/Ski/",
-        documentation: "https://drive.google.com/file/d/1Oj4rOfNvkFu8jdusTCdNx7rJVqq2cyIN/view?usp=sharing"
+
     },
 },
 {
@@ -319,7 +356,7 @@ export const projects: Project[] = [
     title: "Carbuviz 🔋",
     description: "Application de visualisation des consommations de carburant.",
     longDescription: "Création d'une application permettant de visualiser les consommations et d'optimiser les trajets en fonction des besoins énergétiques.",
-    technologies: ["Python", "Matplotlib"],
+    technologies: ["Python", faChartSimple],
     thumbnail: DemoCarbuviz,
     gallery: [{ media: DemoCarbuviz, caption: "Démonstration Carbuviz" }],
     role: "Développeur Python",
@@ -334,7 +371,7 @@ export const projects: Project[] = [
     title: "Space Invader 🚀",
     description: "Jeu de tir spatial inspiré de Space Invaders.",
     longDescription: "Développement d'un jeu de tir spatial en Python avec Pygame, inspiré du célèbre jeu Space Invaders.",
-    technologies: ["Cs", ".Net"],
+    technologies: ["Cs", "dotnet"],
     thumbnail: SpaceInvaderDemo,
     gallery: [{ media: SpaceInvaderDemo, caption: "Gameplay Space Invader" }],
     role: "Développeur Principal",
@@ -344,12 +381,33 @@ export const projects: Project[] = [
         documentation : "https://berachem.dev/space-invaders/Rapport_Space_Invaders.pdf",
         github: "https://github.com/Berachem/space-invaders"
   }
+
 },
+  {
+    id : 'dhcp',
+    title: "Mise en place d'un serveur DHCP 🌐",
+    description: "Configuration d'un serveur DHCP pour un réseau local.",
+    longDescription: "Installation et configuration d'un serveur DHCP sur un réseau local pour attribuer automatiquement des adresses IP aux clients.",
+    technologies: ["Ubuntu", "Linux",faNetworkWired],
+    thumbnail: DHCP1,
+    gallery: [{ media: DHCP1, caption: "Configuration du serveur DHCP" },
+              { media: DHCP2, caption: "Attribution d'adresses IP" },
+              { media: DHCP3, caption: "Configuration des options" },
+              { media: DHCP4, caption: "Attribution de l'adresse IP" },
+              { media: DHCPSchema, caption: "Schéma de fonctionnement" }],
+    role: "Administrateur Réseau",
+    duration: "1 mois",
+    links: {
+        documentation : "https://docs.google.com/presentation/d/1A8qgAmHQhTkqkY8A0AMcoVw1nVyTpRGr/edit?usp=sharing&ouid=112273246261310129380&rtpof=true&sd=true"
+    }
+  }
+
 
   // Rajouter Projet :
    // Projet Machine Learning (CyberSécurité)
    // Traitements d'images 
-   // Configuration DHCP
+
+
 
 
 ];

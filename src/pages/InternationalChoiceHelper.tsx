@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Papa from "papaparse";
 import axios from "axios";
-import Footer from "../components/Footer";
+import Footer from "../components/utils/Footer";
 import MapInternationalHelper from "../components/international/MapInternationalHelper";
 
 const ROWS_PER_PAGE = 10; // Nombre de lignes affichées par page

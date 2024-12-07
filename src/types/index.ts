@@ -8,11 +8,12 @@ export interface Project {
   title: string;
   description: string;
   longDescription: string;
-  technologies: string[];
+  technologies:  (string | IconDefinition)[];
 
   // VISUEL
   thumbnail?: string; // video or image
   gallery: Record<string, string>[]; // { "media": "url", "caption": "text" }
+  partners?: Record<string, string>[]; // { "name": "url" }
 
   // DETAILS
   role?: string;

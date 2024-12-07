@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Interest } from '../types';
+import { Interest } from '../../types';
 
 interface InterestSectionProps {
   interests: Interest[];

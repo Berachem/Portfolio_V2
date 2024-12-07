@@ -1,4 +1,4 @@
-import { Skill } from '../types';
+import { Skill } from '../../types';
 
 interface SkillSectionProps {
   skills: Skill[];
@@ -15,23 +15,31 @@ export const SkillSection = ({ skills }: SkillSectionProps) => {
           <div className="flex flex-wrap gap-2">
             
             { skill.items.length > 0 && typeof skill.items[0] === 'string' ? skill.items.map((item) => (
+              <div className="flex flex-col items-center justify-center">
               <span
                 key={item as string}
                 className="px-2 py-1 text-sm text-gray-700 dark:text-gray-300"
               >
                 
                 <img src={"https://skillicons.dev/icons?i=" + (item as string).toLowerCase()} alt={item as string} className="inline-block mr-2 h-10 w-10 icon-animated" />
-                {item as string}
      
               </span>
+              <span className="text-xs text-gray-500 dark:text-gray-400">
+                {item as string}
+              </span>
+              </div>
             ) ) : skill.items.map((item) => (
+              <div className="flex flex-col items-center justify-center">
               <span
                 key={Object.keys(item)[0]}
                 className="px-2 py-1 text-sm text-gray-700 dark:text-gray-300"
               >
                 <img src={Object.keys(item)[1] as string} alt={Object.keys(item)[0]} className="inline-block mr-2 h-10 w-10 icon-animated" />
-                {Object.keys(item)[0]}
               </span>
+              <span className="text-xs text-gray-500 dark:text-gray-400">
+                {Object.values(item)[0]}
+              </span>
+              </div>
             ))}
           </div>
         </div>

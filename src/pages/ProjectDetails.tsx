@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Calendar, User, Target } from 'lucide-react';
 import { projects } from '../data/projects';
 import { Carousel } from 'flowbite-react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export const ProjectDetails = () => {
   const { id } = useParams();
@@ -127,12 +128,19 @@ export const ProjectDetails = () => {
             </h2>
             <div className="flex flex-wrap gap-2">
               {project.technologies.map((tech) => (
-                <span
-                  key={tech}
-                  className="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded-full text-sm text-gray-700 dark:text-gray-300"
-                >
-                  {tech}
-                </span>
+               <span
+               key={tech as string}
+               className="flex items-center px-2 sm:px-3 py-1 rounded-full text-sm"
+             >
+               {typeof tech === "string" ? 
+               <img
+                 src={`https://skillicons.dev/icons?i=${tech.toLowerCase()}`}
+                 alt={tech}
+                 className="inline-block h-6 w-6 sm:h-8 sm:w-8 icon-animated"
+               /> : <FontAwesomeIcon icon={tech} className="text-xl sm:text-base sm:mr-1 text-gray-600 dark:text-gray-300" />}
+         
+           
+             </span>
               ))}
             </div>
           </div>

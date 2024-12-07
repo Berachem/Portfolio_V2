@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBitcoin, faEthereum } from '@fortawesome/free-brands-svg-icons';
 import { faCoins } from '@fortawesome/free-solid-svg-icons';
-import Footer from '../components/Footer';
+import Footer from '../components/utils/Footer';
 
 const cryptoProjects = [
   {

@@ -45,7 +45,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
 
       {/* Texte affiché en bas */}
       <div className="absolute inset-x-0 bottom-10 sm:bottom-16 flex items-center justify-center">
-        <div className="bg-blue-600/90 text-white p-4 sm:p-6 rounded-lg shadow-2xl text-center w-11/12 sm:w-9/12 md:w-8/12 lg:w-6/12 hover:bg-blue-500 transition-colors duration-300">
+        <div className="bg-blue-600/90 text-white p-4 sm:p-6 rounded-lg shadow-2xl text-center w-11/12 sm:w-9/12 md:w-8/12 lg:w-6/12 hover:bg-blue-500 transition-colors duration-300 ">
           <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 uppercase">
             {project.title}
           </h3>
@@ -56,14 +56,17 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
           <div className="flex justify-center gap-2 flex-wrap">
             {project.technologies.map((tech) => (
               <span
-                key={tech}
+                key={tech as string}
                 className="flex items-center px-2 sm:px-3 py-1 rounded-full text-sm"
               >
+                {typeof tech === "string" ? 
                 <img
                   src={`https://skillicons.dev/icons?i=${tech.toLowerCase()}`}
                   alt={tech}
                   className="inline-block h-6 w-6 sm:h-8 sm:w-8 icon-animated"
-                />
+                /> : <FontAwesomeIcon icon={tech} className="text-xl sm:text-base sm:mr-1" />}
+          
+            
               </span>
             ))}
             {project.links &&
@@ -82,6 +85,14 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
                     />
                   )}
                 </a>
+              ))}
+              {project.partners && project.partners.map((partner) => (
+                <img
+                  key={partner.name}
+                  src={partner.url}
+                  alt={partner.name}
+                  className="h-8 sm:h-10 md:h-12 object-contain hidden sm:block"
+                />
               ))}
           </div>
         </div>
