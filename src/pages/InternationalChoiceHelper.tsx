@@ -14,7 +14,38 @@ const InternationalChoiceHelper: React.FC = () => {
     const [formation, setFormation] = useState<string>('FI');
     const [category, setCategory] = useState<string>('');
 
+    const [favorites, setFavorites] = useState<any[]>([]);
+
     const [columns, setColumns] = useState<string[]>([]); // Colonnes dynamiques
+
+    // Charger les favoris depuis le localStorage
+    useEffect(() => {
+        const storedFavorites = localStorage.getItem('favorites');
+        if (storedFavorites) {
+            setFavorites(JSON.parse(storedFavorites));
+        }
+    }, []);
+
+    // Sauvegarder les favoris dans le localStorage
+    const saveFavorites = (favorites: any[]) => {
+        setFavorites(favorites);
+        localStorage.setItem('favorites', JSON.stringify(favorites));
+    };
+
+    // Fonction pour basculer une ligne dans les favoris
+    const toggleFavorite = (row: any) => {
+        const isFavorite = favorites.some(
+            (fav) => JSON.stringify(fav) === JSON.stringify(row)
+        );
+        if (isFavorite) {
+            const updatedFavorites = favorites.filter(
+                (fav) => JSON.stringify(fav) !== JSON.stringify(row)
+            );
+            saveFavorites(updatedFavorites);
+        } else {
+            saveFavorites([...favorites, row]);
+        }
+    };
 
     // Colonnes pour les filtres dynamiques
     const filterableColumns = ['ZONE', 'PAYS', 'VILLE'];
@@ -134,6 +165,27 @@ const InternationalChoiceHelper: React.FC = () => {
                 </span>
             </h1>
 
+            {/* Affichage des favoris */}
+            {favorites.length > 0 && (
+                <div className="mb-6 p-4 border rounded bg-gray-100 dark:bg-gray-800">
+                    <h2 className="text-lg font-bold dark:text-gray-200">
+                        Vos Favoris :
+                    </h2>
+                    <ul className="list-disc pl-6 dark:text-gray-300">
+                        {favorites.map((fav, index) => (
+                            <li key={index}>
+                                {fav['UNIVERSITE PARTENAIRE OFFRE DE SÉJOUR'] ||
+                                    'Université inconnue'}{' '}
+                                , {fav['VILLE'] || 'Ville inconnue'} (
+                                {fav['PAYS'] || 'Pays inconnu'}) -{' '}
+                                {fav['Category (indicative) C1/C2/C3'] ||
+                                    'Catégorie inconnue'}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            )}
+
             {data.length === 0 ? (
                 <p className="dark:text-gray-400">
                     Chargement des données depuis {csvFilePath}...
@@ -235,6 +287,9 @@ const InternationalChoiceHelper: React.FC = () => {
                         <table className="min-w-full bg-white dark:bg-gray-900 border rounded shadow">
                             <thead>
                                 <tr className="bg-gray-100 dark:bg-gray-700">
+                                    <th className="py-2 px-4 border dark:border-gray-700 dark:text-gray-300">
+                                        Favoris
+                                    </th>
                                     {columns.map((column) => (
                                         <th
                                             key={column}
@@ -252,6 +307,28 @@ const InternationalChoiceHelper: React.FC = () => {
                                             key={rowIndex}
                                             className="even:bg-gray-100 odd:bg-gray-50 dark:even:bg-gray-800 dark:odd:bg-gray-700"
                                         >
+                                            <td className="py-2 px-4 border dark:border-gray-700 dark:text-gray-200 text-center">
+                                                <button
+                                                    onClick={() =>
+                                                        toggleFavorite(row)
+                                                    }
+                                                    className={`text-lg ${
+                                                        favorites.some(
+                                                            (fav) =>
+                                                                JSON.stringify(
+                                                                    fav
+                                                                ) ===
+                                                                JSON.stringify(
+                                                                    row
+                                                                )
+                                                        )
+                                                            ? 'text-yellow-500'
+                                                            : 'text-gray-400'
+                                                    }`}
+                                                >
+                                                    ★
+                                                </button>
+                                            </td>
                                             {columns.map((column) => (
                                                 <td
                                                     key={column}

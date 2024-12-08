@@ -1,22 +1,24 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 
-// Icône par défaut pour Leaflet (corrige un problème d'affichage dans certains cas)
-
-const countryIcon = new L.Icon({
-    iconUrl: 'https://i.postimg.cc/FFJWRnMS/point-map.png',
-    iconSize: [30, 31], // Taille ajustée
-    iconAnchor: [15, 31], // Ancre ajustée
-    popupAnchor: [1, -34],
-    shadowUrl:
-        'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
-    shadowSize: [31, 31]
+// Icône pour la localisation de l'utilisateur
+const userLocationIcon = new L.Icon({
+    iconUrl:
+        'https://cdn4.iconfinder.com/data/icons/real-estate-flat-style-1/128/Real_Estate_1_-_Flat_Style_-_9-01-2-512.png',
+    iconSize: [35, 35],
+    iconAnchor: [17, 35],
+    popupAnchor: [1, -34]
 });
 
-// Type pour les données
+// Définir le type des données
+type RowData = {
+    PAYS?: string;
+    ['UNIVERSITE PARTENAIRE OFFRE DE SÉJOUR']?: string;
+};
+
 type MapComponentProps = {
-    data: Array<any>;
+    data: Array<RowData>;
 };
 
 const countryCoordinates: { [key: string]: [number, number] } = {
@@ -54,6 +56,45 @@ const countryCoordinates: { [key: string]: [number, number] } = {
 };
 
 const MapInternationalHelper: React.FC<MapComponentProps> = ({ data }) => {
+    const [userLocation, setUserLocation] = useState<[number, number] | null>(
+        null
+    );
+
+    // Obtenir la localisation de l'utilisateur
+    useEffect(() => {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    setUserLocation([
+                        position.coords.latitude,
+                        position.coords.longitude
+                    ]);
+                },
+                (error) => {
+                    console.error(
+                        'Erreur lors de la récupération de la localisation :',
+                        error
+                    );
+                }
+            );
+        }
+    }, []);
+
+    // Regrouper les universités par pays
+    const universitiesByCountry = data.reduce(
+        (acc, row) => {
+            const country = row.PAYS?.toUpperCase();
+            if (country) {
+                if (!acc[country]) {
+                    acc[country] = [];
+                }
+                acc[country].push(row);
+            }
+            return acc;
+        },
+        {} as { [key: string]: Array<RowData> }
+    );
+
     return (
         <div style={{ height: '500px', width: '100%', marginTop: '20px' }}>
             <MapContainer
@@ -67,32 +108,67 @@ const MapInternationalHelper: React.FC<MapComponentProps> = ({ data }) => {
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 />
-                {/* Markers */}
-                {data.map((row, index) => {
-                    const coordinates =
-                        countryCoordinates[row.PAYS?.toUpperCase()];
-                    if (coordinates) {
-                        return (
-                            <Marker
-                                position={coordinates}
-                                key={`${row.PAYS}-${index}`}
-                                icon={countryIcon}
-                            >
-                                <Popup>
-                                    <strong>{row.PAYS}</strong>
-                                    <br />
-                                    {row.VILLE || 'Ville inconnue'}
-                                    <br />
-                                    <b>at</b>{' '}
-                                    {row[
-                                        'UNIVERSITE PARTENAIRE OFFRE DE SÉJOUR'
-                                    ] || 'Université inconnue'}
-                                </Popup>
-                            </Marker>
-                        );
+
+                {/* Marqueurs pour chaque pays */}
+                {Object.entries(universitiesByCountry).map(
+                    ([country, universities]) => {
+                        const coordinates = countryCoordinates[country];
+                        if (coordinates) {
+                            // Créer un divIcon si le nombre d'universités est supérieur à 1
+                            const markerIcon =
+                                universities.length > 1
+                                    ? L.divIcon({
+                                          html: `<div style="position: relative; text-align: center;">
+                                <img src="https://i.postimg.cc/FFJWRnMS/point-map.png" style="width: 30px;" />
+                                <span style="position: absolute; top: 0; left: 22px; width: 100%; font-weight: italic; font-size: 18px; color: #1100FA;">x${universities.length}</span>
+                             </div>`,
+                                          className: '',
+                                          iconSize: [30, 31],
+                                          iconAnchor: [15, 31],
+                                          popupAnchor: [1, -34]
+                                      })
+                                    : new L.Icon({
+                                          iconUrl:
+                                              'https://i.postimg.cc/FFJWRnMS/point-map.png',
+                                          iconSize: [30, 31],
+                                          iconAnchor: [15, 31],
+                                          popupAnchor: [1, -34]
+                                      });
+
+                            return (
+                                <Marker
+                                    position={coordinates}
+                                    key={country}
+                                    icon={markerIcon}
+                                >
+                                    <Popup>
+                                        <strong>{country}</strong>
+                                        <br />
+                                        {universities.length} université(s)
+                                        <ul>
+                                            {universities.map((uni, index) => (
+                                                <li key={index}>
+                                                    🏛️{' '}
+                                                    {uni[
+                                                        'UNIVERSITE PARTENAIRE OFFRE DE SÉJOUR'
+                                                    ] || 'Université inconnue'}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </Popup>
+                                </Marker>
+                            );
+                        }
+                        return null;
                     }
-                    return null;
-                })}
+                )}
+
+                {/* Marqueur pour la localisation de l'utilisateur */}
+                {userLocation && (
+                    <Marker position={userLocation} icon={userLocationIcon}>
+                        <Popup>Vous êtes ici</Popup>
+                    </Marker>
+                )}
             </MapContainer>
         </div>
     );
