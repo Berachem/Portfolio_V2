@@ -3,6 +3,9 @@ import Papa from 'papaparse';
 import axios from 'axios';
 import Footer from '../components/utils/Footer';
 import MapInternationalHelper from '../components/international/MapInternationalHelper';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
+import ScrollProgressBar from '../components/utils/ScrollDownProgressBar';
 
 const ROWS_PER_PAGE = 10; // Nombre de lignes affichées par page
 
@@ -156,14 +159,32 @@ const InternationalChoiceHelper: React.FC = () => {
 
     return (
         <div className="container mx-auto p-4">
-            <h1 className="text-2xl font-bold mb-4 dark:text-gray-200">
-                International Choice Helper 🌍💫
-                {/* by Berachem */}
-                <span className="text-sm block font-normal dark:text-gray-400">
-                    Aide à la recherche de destination internationale pour les
-                    étudiants de l'ESIEE Paris
-                </span>
-            </h1>
+            <ScrollProgressBar />
+            <div className="flex mb-6 flex-col md:flex-row items-center justify-between">
+                <h1 className="text-2xl font-bold mb-4 dark:text-gray-200">
+                    International Choice Helper 🌍💫
+                    {/* by Berachem */}
+                    <span className="text-sm block font-normal dark:text-gray-400">
+                        Aide à la recherche de destination internationale pour
+                        les étudiants de l'ESIEE Paris
+                    </span>
+                </h1>
+                {/* Bouton pour soutenir */}
+                <a
+                    href="https://buy.stripe.com/00g6pobii8figJG6os"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex flex-wrap items-center justify-center gap-2 p-2 bg-purple-500 text-white rounded dark:bg-purple-400 animate-pulse"
+                >
+                    <span>Soutenir</span>
+                    <img
+                        src="https://www.afscm.org/wp-content/uploads/2019/08/quel-terminal-de-paiement-pour-stripe.png"
+                        alt="Buy Me A Coffee"
+                        className="h-8"
+                    />
+                    <FontAwesomeIcon icon={faArrowAltCircleRight} />
+                </a>
+            </div>
 
             {/* Affichage des favoris */}
             {favorites.length > 0 && (
@@ -412,6 +433,22 @@ const InternationalChoiceHelper: React.FC = () => {
             )}
 
             <MapInternationalHelper data={filteredData} />
+
+            {/* Bouton pour soutenir */}
+            <a
+                href="https://buy.stripe.com/00g6pobii8figJG6os"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-wrap items-center justify-center gap-2 p-2 bg-purple-500 text-white rounded dark:bg-purple-400 animate-pulse"
+            >
+                <span>Soutenir</span>
+                <img
+                    src="https://www.afscm.org/wp-content/uploads/2019/08/quel-terminal-de-paiement-pour-stripe.png"
+                    alt="Buy Me A Coffee"
+                    className="h-8"
+                />
+                <FontAwesomeIcon icon={faArrowAltCircleRight} />
+            </a>
 
             {/* Footer */}
             <Footer />
