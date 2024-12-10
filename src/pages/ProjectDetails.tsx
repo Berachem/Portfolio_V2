@@ -106,8 +106,8 @@ export const ProjectDetails = () => {
                 </div>
 
                 {/* Title and Details */}
-                <h1 className="text-3xl font-bold mb-4 text-gray-800 dark:text-white text-center sm:text-left">
-                    <div className="flex flex-wrap gap-4 justify-center sm:justify-start mb-3">
+                <h1 className="text-3xl font-bold mb-3 text-gray-800 dark:text-white text-center sm:text-left">
+                    <div className="flex flex-wrap gap-4 justify-center sm:justify-start ">
                         {project.title}
                         <span className="text-gray-600 dark:text-gray-300 text-xl mt-2 ml-5">
                             |<span className="ml-5">Réalisé avec </span>
@@ -123,6 +123,18 @@ export const ProjectDetails = () => {
                             ))}
                     </div>
                 </h1>
+
+                {/* Tags du projet */}
+                <div className="flex flex-wrap gap-4 justify-center sm:justify-start mb-2">
+                    {project.tags?.map((tag) => (
+                        <span
+                            key={tag.name}
+                            className={`bg-${tag.color}-500 text-white dark:bg-${tag.color}-700  px-3 py-1 rounded-full text-sm`}
+                        >
+                            {tag.emoji} {tag.name}
+                        </span>
+                    ))}
+                </div>
 
                 <div className="flex flex-wrap gap-4 justify-center sm:justify-start">
                     {project.role && project.duration && (

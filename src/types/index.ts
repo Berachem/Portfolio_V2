@@ -14,13 +14,13 @@ export const ProjectTags = {
   APP_DEVELOPMENT: { name: "App Development", shortName: "App", emoji: "📱", color: "green" },
   MOBILE_DEVELOPMENT: { name: "Mobile Development", shortName: "Mobile", emoji: "📱", color: "purple" },
   AI: { name: "AI", shortName: "AI", emoji: "🤖", color: "red" },
-  DATA_ANALYSIS: { name: "Data Analysis", shortName: "Data", emoji: "📊", color: "orange" },
-  MACHINE_LEARNING: { name: "Machine Learning", shortName: "ML", emoji: "🧠", color: "yellow" },
-  CYBERSECURITY: { name: "Cybersecurity", shortName: "Cyber", emoji: "🛡️", color: "black" },
+  DATA_ANALYSIS: { name: "Data Analysis", shortName: "Data", emoji: "📊", color: "cyan" },
+  MACHINE_LEARNING: { name: "Machine Learning", shortName: "ML", emoji: "🧠", color: "blue"},
+  CYBERSECURITY: { name: "Cybersecurity", shortName: "Cyber", emoji: "🛡️", color: "green" },
   GAME_DEVELOPMENT: { name: "Game Development", shortName: "Games", emoji: "🎮", color: "cyan" },
   PARTNERSHIP: { name: "Partnership", shortName: "Partners", emoji: "🤝", color: "pink" },
   DEVOPS: { name: "DevOps", shortName: "DevOps", emoji: "⚙️", color: "gray" },
-  OTHER: { name: "Other", shortName: "Other", emoji: "🔧", color: "brown" }
+  OTHER: { name: "Other", shortName: "Other", emoji: "🔧", color: "gray" }
 } as Record<string, ProjectTag>;
 
 
