@@ -1,5 +1,5 @@
 
-import { Project } from '../types';
+import { Project, ProjectTags } from '../types';
 
 
 // ALL DEMOS
@@ -99,7 +99,6 @@ import Medical_IFT_Thumbnail_Report from '../assets/img/projects/medical-image-a
 import Medical_IRM_Scene from '../assets/img/projects/medical-image-analyse/IRM_scene.jpeg';
 
 
-
 export const projects: Project[] = [
   {
     id: 'unesco-ile-cite',
@@ -125,6 +124,7 @@ export const projects: Project[] = [
       github: "https://github.com/Berachem/IledelaCite_Unesco",
       website: "http://iledelacite-paris.fr/src/index.php",
     },
+    tags: [ProjectTags.WEB_DEVELOPMENT, ProjectTags.PARTNERSHIP]
   },
   {
     id: 'zoo-ggle',
@@ -150,6 +150,7 @@ export const projects: Project[] = [
     links: {
       documentation: "https://docs.google.com/document/d/1HvlYzxMcQ87QlavMk3Z_jaXWTemJKZzu9LXvUgGAL3Y/edit?usp=sharing",
     },
+    tags: [ProjectTags.WEB_DEVELOPMENT, ProjectTags.GAME_DEVELOPMENT]
   },
   {
     id: 'azul-game',
@@ -165,6 +166,7 @@ export const projects: Project[] = [
       github: "https://github.com/Berachem/Azul-Game",
       website: "https://berachem.dev/Azul-Game/",
     },
+    tags: [ProjectTags.AI , ProjectTags.GAME_DEVELOPMENT]
   },
   {
     id: 'kontabl',
@@ -186,6 +188,7 @@ export const projects: Project[] = [
       website: "https://kontabl.berachem.dev/#/login",
       documentation: "https://drive.google.com/drive/folders/1MlSPmzLcCJm4KJoZTvuvrkUGpMf7DZQX?usp=sharing",
     },
+    tags: [ProjectTags.WEB_DEVELOPMENT]
   },
   {
     id: 'robot-gig-bot',
@@ -201,6 +204,7 @@ export const projects: Project[] = [
       github: "https://github.com/Berachem/eval-bot",
       website: "https://berachem.dev/eval-bot/",
     },
+    tags: [ProjectTags.OTHER]
   },
   {
     id: 'theses',
@@ -217,6 +221,7 @@ export const projects: Project[] = [
       website: "https://these.berachem.dev/",
       documentation: "https://www.data.gouv.fr/fr/datasets/theses-soutenues-en-france-depuis-1985/",
     },
+    tags: [ProjectTags.WEB_DEVELOPMENT, ProjectTags.DATA_ANALYSIS]
   },
   {
     id: 'eco-tidien',
@@ -232,6 +237,7 @@ export const projects: Project[] = [
     links: {
       documentation: "https://drive.google.com/file/d/1D9wPyUApHtgXigsubJyvIEHDy02rnfgS/view?usp=sharing",
     },
+    tags: [ProjectTags.MOBILE_DEVELOPMENT]
   },
   {
     id: 'loop-hero',
@@ -255,6 +261,7 @@ export const projects: Project[] = [
       github: "https://github.com/Berachem/LoopHero",
       website: "https://berachem.dev/LoopHero/",
     },
+    tags: [ProjectTags.GAME_DEVELOPMENT]
   },
   {
     id: 'croisade',
@@ -270,6 +277,7 @@ export const projects: Project[] = [
       github: "https://github.com/Berachem/Croisade",
       website: "https://berachem.dev/Croisade/",
     },
+    tags: [ProjectTags.AI, ProjectTags.GAME_DEVELOPMENT]
   },
   {
     id: 'save-the-cats',
@@ -284,6 +292,7 @@ export const projects: Project[] = [
     links: {
       github: "https://github.com/Berachem/SaveTheCats",
     },
+    tags: [ProjectTags.GAME_DEVELOPMENT]
   },
   {
     id: 'nasa-pic',
@@ -300,6 +309,7 @@ export const projects: Project[] = [
         github: "https://github.com/Berachem/nasa",
         website: "https://nasa.berachem.dev/"
     },
+    tags: [ProjectTags.WEB_DEVELOPMENT, ProjectTags.PARTNERSHIP]
 },
 {
     id: 'hotel-ski',
@@ -318,6 +328,7 @@ export const projects: Project[] = [
         website: "https://perso-etudiant.u-pem.fr/~berachem.markria/Ski/",
 
     },
+    tags: [ProjectTags.WEB_DEVELOPMENT]
 },
 {
     id: 'algorithmes-graphes',
@@ -333,6 +344,7 @@ export const projects: Project[] = [
         github: "https://github.com/Berachem/AlgorithmesGraphesAutomates",
         website: "https://berachem.dev/AlgorithmesGraphesAutomates/"
     },
+    tags: [ProjectTags.DATA_ANALYSIS]
 },
 {
     id: 'martingale',
@@ -347,6 +359,7 @@ export const projects: Project[] = [
     links: {
         github: "https://github.com/Berachem/Strategie-maths-casino"
     },
+    tags: [ProjectTags.DATA_ANALYSIS]
 },
 {
   id: 'rapizz',
@@ -362,6 +375,7 @@ export const projects: Project[] = [
       github: "https://github.com/Berachem/rapizz",
       website: "https://rapizz.berachem.dev/"
   },
+  tags: [ProjectTags.APP_DEVELOPMENT]
 
 },
   {
@@ -376,7 +390,8 @@ export const projects: Project[] = [
     duration: "3 mois",
     links: {
         github: "https://github.com/Berachem/carbuviz"
-    }
+    },
+    tags: [ProjectTags.DATA_ANALYSIS, ProjectTags.WEB_DEVELOPMENT]
   },
 
   {
@@ -393,7 +408,8 @@ export const projects: Project[] = [
         website : "https://berachem.dev/SpaceInvader/",
         documentation : "https://berachem.dev/space-invaders/Rapport_Space_Invaders.pdf",
         github: "https://github.com/Berachem/space-invaders"
-  }
+  },
+  tags: [ProjectTags.GAME_DEVELOPMENT]
 
 },
   {
@@ -412,7 +428,8 @@ export const projects: Project[] = [
     duration: "1 mois",
     links: {
         documentation : "https://docs.google.com/presentation/d/1A8qgAmHQhTkqkY8A0AMcoVw1nVyTpRGr/edit?usp=sharing&ouid=112273246261310129380&rtpof=true&sd=true"
-    }
+    },
+    tags: [ProjectTags.CYBERSECURITY]
   },
 
   {
@@ -432,7 +449,8 @@ export const projects: Project[] = [
         github: "https://github.com/Berachem/Cyberattacks_ML_Detection",
         documentation: "https://drive.google.com/file/d/1KsuV9BCa2sCqbZ7pBIhqbYG6UGXaawAO/view?usp=sharing"
     },
-    partners: [{ name: "UCI", url: UCI_Logo }, { name: "UNSW", url: UNSW_Logo }]
+    partners: [{ name: "UCI", url: UCI_Logo }, { name: "UNSW", url: UNSW_Logo }],
+    tags: [ProjectTags.MACHINE_LEARNING, ProjectTags.CYBERSECURITY]
 },
 
 {
@@ -452,15 +470,18 @@ export const projects: Project[] = [
   links: {
       documentation: "https://drive.google.com/file/d/1ijvQm2apZjyDIxo7JVCFML7Mjm1WE0MG/view?usp=sharing"
   },
-  partners: [{ name: "Université de Campinas", url: "https://e7.pngegg.com/pngimages/492/622/png-clipart-university-of-campinas-school-of-mechanical-engineering-unicamp-camp-quatre-saisons-vestibular-exam-kosrae-liberation-day-logo-university.png" }]
+  partners: [{ name: "Université de Campinas", url: "https://e7.pngegg.com/pngimages/492/622/png-clipart-university-of-campinas-school-of-mechanical-engineering-unicamp-camp-quatre-saisons-vestibular-exam-kosrae-liberation-day-logo-university.png" }],
+  tags: [ProjectTags.MACHINE_LEARNING, ProjectTags.DATA_ANALYSIS]
+ 
 }
 
 
 
 
   // Rajouter Projet :
-  // The Country
+   // The Country
    // MonCentrePermis
+   // Communication : Ennéagramme
 
 
 

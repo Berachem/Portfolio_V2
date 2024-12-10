@@ -13,7 +13,7 @@ import { projects } from '../data/projects';
 import Logo_AA_Partners from '../assets/img/organizations/aa.png';
 import Logo_Enedis from '../assets/img/organizations/enedis.png';
 import Logo_Unesco from '../assets/img/organizations/unesco_filled.png';
-import { Experience, Interest, Skill } from '../types';
+import { Experience, Interest, ProjectTag, ProjectTags, Skill } from '../types';
 import { Carousel } from 'flowbite-react';
 import StatsSection from '../components/sections/StatsSection';
 import Footer from '../components/utils/Footer';
@@ -29,7 +29,7 @@ import {
     faLanguage
 } from '@fortawesome/free-solid-svg-icons';
 import ScrollDownArrow from '../components/utils/ScrollDownArrow';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import YSLogo from '../assets/img/organizations/ysl.png';
 import LVLogo from '../assets/img/organizations/LV.jpeg';
@@ -149,7 +149,7 @@ const skills: Skill[] = [
     },
     {
         category: 'Certifications',
-        items: [{ name: 'TOEIC (B2/C1)', url: TOEIC }]
+        items: [{ name: '880 (B2+)', url: TOEIC }]
     }
 ];
 
@@ -215,6 +215,40 @@ const companies = [
 
 export const DevHomePage = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [selectedCategory, setSelectedCategory] = useState<
+        ProjectTag | 'All'
+    >('All');
+    const [filteredProjects, setFilteredProjects] = useState(projects);
+
+    useEffect(() => {
+        setFilteredProjects(
+            selectedCategory === 'All'
+                ? projects
+                : projects.filter((project) =>
+                      project.tags?.some(
+                          (tag) => tag.name === selectedCategory.name
+                      )
+                  )
+        );
+    }, [selectedCategory]);
+
+    // Filtrer et trier les tags par nombre de projets
+    const tagCounts = Object.keys(ProjectTags).reduce(
+        (acc, tagKey) => {
+            const count = projects.filter((project) =>
+                project.tags?.includes(ProjectTags[tagKey])
+            ).length;
+            if (count > 0) {
+                acc[tagKey] = count;
+            }
+            return acc;
+        },
+        {} as Record<string, number>
+    );
+
+    const sortedTags = Object.keys(tagCounts).sort(
+        (a, b) => tagCounts[b] - tagCounts[a]
+    );
 
     return (
         <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
@@ -289,6 +323,44 @@ export const DevHomePage = () => {
 
                 {/* Projects Section */}
                 <Section title="Projets">
+                    {/* Category Filter */}
+                    <div className="hidden md:flex justify-center mb-4 sm:mb-6 gap-2">
+                        {['All', ...sortedTags].map((tagKey) => {
+                            const tag =
+                                tagKey === 'All'
+                                    ? {
+                                          name: 'All',
+                                          emoji: '',
+                                          color: 'blue',
+                                          shortName: 'All'
+                                      }
+                                    : (ProjectTags[tagKey] as ProjectTag);
+                            return (
+                                <button
+                                    key={tagKey}
+                                    onClick={() => {
+                                        setSelectedCategory(
+                                            tagKey === 'All'
+                                                ? 'All'
+                                                : (ProjectTags[
+                                                      tagKey
+                                                  ] as ProjectTag)
+                                        );
+                                        setCurrentIndex(0);
+                                    }}
+                                    className={`px-4 py-2 text-sm font-semibold rounded-lg transition-colors duration-300 ${
+                                        (selectedCategory === 'All' &&
+                                            tagKey === 'All') ||
+                                        selectedCategory === ProjectTags[tagKey]
+                                            ? `bg-${tag.color}-500 text-white border-${tag.color}-500`
+                                            : `bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-gray-300 dark:border-gray-600 hover:bg-${tag.color}-100 hover:text-${tag.color}-500`
+                                    }`}
+                                >
+                                    {tag.emoji} {tag.shortName}
+                                </button>
+                            );
+                        })}
+                    </div>
                     <div
                         className="relative w-full h-[300px] sm:h-[600px] md:h-[800px]" // Hauteur dynamique
                         id="projects"
@@ -299,7 +371,7 @@ export const DevHomePage = () => {
                             className="h-full relative"
                             onSlideChange={(index) => setCurrentIndex(index)}
                         >
-                            {projects.map((project) => (
+                            {filteredProjects.map((project) => (
                                 <div
                                     key={project.id}
                                     className="flex flex-col sm:flex-row justify-center items-center p-4"
@@ -310,7 +382,7 @@ export const DevHomePage = () => {
                         </Carousel>
                         {/* Custom Indicators */}
                         <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
-                            {projects.map((_, index) => (
+                            {filteredProjects.map((_, index) => (
                                 <div
                                     onClick={() => setCurrentIndex(index)}
                                     key={index}
