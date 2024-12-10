@@ -95,7 +95,7 @@ import UNSW_Logo from '../assets/img/projects/ml-cyber-attacks/UNSW.jpg';
 // Medical Image Analysis
 import Medical_IFT_Thumbnail from '../assets/img/projects/medical-image-analyse/microstructutures_substance_blanche.png';
 import Medical_IFT_Recap from '../assets/img/projects/medical-image-analyse/IRM_IFT_Analyse.png';
-import Medical_IFT_Thumbnail_Report from '../assets/img/projects/medical-image-analyse/rapport.png';
+import Medical_IFT_Thumbnail_Report from '../assets/img/projects/medical-image-analyse/Rapport.png';
 import Medical_IRM_Scene from '../assets/img/projects/medical-image-analyse/IRM_scene.jpeg';
 
 
