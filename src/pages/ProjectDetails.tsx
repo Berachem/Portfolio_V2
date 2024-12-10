@@ -109,18 +109,22 @@ export const ProjectDetails = () => {
                 <h1 className="text-3xl font-bold mb-3 text-gray-800 dark:text-white text-center sm:text-left">
                     <div className="flex flex-wrap gap-4 justify-center sm:justify-start ">
                         {project.title}
-                        <span className="text-gray-600 dark:text-gray-300 text-xl mt-2 ml-5">
-                            |<span className="ml-5">Réalisé avec </span>
-                        </span>
-                        {project.partners &&
-                            project.partners.map((partner) => (
-                                <img
-                                    key={partner.name}
-                                    src={partner.url}
-                                    alt={partner.name}
-                                    className="h-8 sm:h-10 md:h-12 object-contain "
-                                />
-                            ))}
+
+                        {project.partners && (
+                            <>
+                                <span className="text-gray-600 dark:text-gray-300 text-xl mt-2 ml-5">
+                                    |<span className="ml-5">Réalisé avec </span>
+                                </span>
+                                {project.partners?.map((partner) => (
+                                    <img
+                                        key={partner.name}
+                                        src={partner.url}
+                                        alt={partner.name}
+                                        className="h-8 sm:h-10 md:h-12 object-contain "
+                                    />
+                                ))}
+                            </>
+                        )}
                     </div>
                 </h1>
 
