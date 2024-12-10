@@ -1,14 +1,29 @@
 import { IconDefinition } from "@fortawesome/free-brands-svg-icons";
 
+
+export enum ProjectTag {
+  WEB_DEVELOPMENT = "Web Development",
+  MOBILE_DEVELOPMENT = "Mobile Development",
+  MACHINE_LEARNING = "Machine Learning",
+  CYBERSECURITY = "Cybersecurity",
+  GAME_DEVELOPMENT = "Game Development",
+  DEVOPS = "DevOps",
+  OTHER = "Other"
+}
+
 export interface Project {
 
   id: string;
+  tags? : ProjectTag[];
+
 
   // INFORMATIONS
   title: string;
   description: string;
   longDescription: string;
   technologies:  (string | IconDefinition)[];
+  partnersPeople?: Record<string, string>[];
+  
 
   // VISUEL
   thumbnail?: string; // video or image
@@ -23,6 +38,7 @@ export interface Project {
 
   // LINKS
   links?: Record<string, string>; // { "github": "url", "website": "url" , "documentation": "url" }
+  
   
 }
 

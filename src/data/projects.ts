@@ -68,7 +68,7 @@ import Martingale from '../assets/img/projects/martingale/martingale.jpg';
 
 // Rapizz
 import RapizzHome from '../assets/img/projects/rapizz/rapizz_home.png';
-import { faChartSimple, faLanguage, faNetworkWired, faRobot } from '@fortawesome/free-solid-svg-icons';
+import { faChartSimple, faLanguage, faNetworkWired, faRobot, faShield } from '@fortawesome/free-solid-svg-icons';
 import {  faSpaceAwesome } from '@fortawesome/free-brands-svg-icons';
 
 // Nasa
@@ -84,6 +84,19 @@ import DHCPSchema from '../assets/img/projects/dhcp/dhcp-diag.png';
 // SKI
 import SkiMCD from '../assets/img/projects/ski/MCD.png';
 import SkiMLD from '../assets/img/projects/ski/MLD.png';
+
+// Machine Learning (CyberSécurité)
+import ML_CyberAttack from '../assets/img/projects/ml-cyber-attacks/ML.png';
+import ML_CyberAttack2 from '../assets/img/projects/ml-cyber-attacks/cyber-attacks.jpeg';
+import ML_CyberAttack_Thumbnail_Report from '../assets/img/projects/ml-cyber-attacks/Rapport_thumbnail.png';
+import UCI_Logo from '../assets/img/projects/ml-cyber-attacks/UCI.png';
+import UNSW_Logo from '../assets/img/projects/ml-cyber-attacks/UNSW.jpg';
+
+// Medical Image Analysis
+import Medical_IFT_Thumbnail from '../assets/img/projects/medical-image-analyse/microstructutures_substance_blanche.png';
+import Medical_IFT_Recap from '../assets/img/projects/medical-image-analyse/IRM_IFT_Analyse.png';
+import Medical_IFT_Thumbnail_Report from '../assets/img/projects/medical-image-analyse/rapport.png';
+import Medical_IRM_Scene from '../assets/img/projects/medical-image-analyse/IRM_scene.jpeg';
 
 
 
@@ -400,13 +413,54 @@ export const projects: Project[] = [
     links: {
         documentation : "https://docs.google.com/presentation/d/1A8qgAmHQhTkqkY8A0AMcoVw1nVyTpRGr/edit?usp=sharing&ouid=112273246261310129380&rtpof=true&sd=true"
     }
-  }
+  },
+
+  {
+    id: 'machine-learning-cyber-attacks',
+    title: "Prédiction des cyber-attaques 🛡️",
+    description: "Utilisation du machine learning pour prédire les cyberattaques.",
+    longDescription: "Ce projet explore l'application du machine learning pour prédire les cyberattaques en utilisant des techniques supervisées, non supervisées et semi-supervisées. Il vise à identifier les solutions les plus efficaces en fonction des contraintes techniques et des limites des ensembles de données. Nos études se basent sur celles de l'Université de Californie à Irvine (UCI) et de l'Université de New South Wales (UNSW).",
+    technologies: ["Python", faShield , "TensorFlow"],
+    thumbnail: ML_CyberAttack,
+    gallery: [
+      { media: ML_CyberAttack2, caption : "Les types d'attaques cyber!" },
+      { media: ML_CyberAttack_Thumbnail_Report, caption : "Rapport du projet" }
+    ],
+    role: "Développeur Machine Learning",
+    duration: "2 mois",
+    links: {
+        github: "https://github.com/Berachem/Cyberattacks_ML_Detection",
+        documentation: "https://drive.google.com/file/d/1KsuV9BCa2sCqbZ7pBIhqbYG6UGXaawAO/view?usp=sharing"
+    },
+    partners: [{ name: "UCI", url: UCI_Logo }, { name: "UNSW", url: UNSW_Logo }]
+},
+
+{
+  id: 'medical-image-analyse',
+  title: "Traitement d'images médicales (IRM)",
+  description: "Application de l'Image Foresting Transform pour la segmentation et le traitement d'images médicales.",
+  longDescription: "Ce projet explore l'utilisation de l'Image Foresting Transform (IFT) pour le traitement d'images médicales, en se basant sur l'article de Alexandre X. Falcão, Jorge Stolfi, et Roberto de Alencar Lotufo. L'IFT propose une méthode innovante de segmentation d'images en utilisant des graphes et des chemins de coût minimal, permettant d'unifier diverses techniques de traitement d'images sous un même cadre théorique. Cette approche est particulièrement utile pour la segmentation précise des structures internes dans les images médicales, comme les IRM et les scanners.",
+  technologies: ["C", "OpenCV", "Python"],
+  thumbnail: Medical_IFT_Thumbnail,
+  gallery: [
+    { media: Medical_IRM_Scene, caption : "Exemple de prise d'IRM" },
+    { media: Medical_IFT_Recap, caption : "Analyse IRM avec IFT" },
+    { media: Medical_IFT_Thumbnail_Report, caption : "Rapport du projet" }
+  ],
+  role: "Développeur en Traitement d'Images Médicales",
+  duration: "3 mois",
+  links: {
+      documentation: "https://drive.google.com/file/d/1ijvQm2apZjyDIxo7JVCFML7Mjm1WE0MG/view?usp=sharing"
+  },
+  partners: [{ name: "Université de Campinas", url: "https://e7.pngegg.com/pngimages/492/622/png-clipart-university-of-campinas-school-of-mechanical-engineering-unicamp-camp-quatre-saisons-vestibular-exam-kosrae-liberation-day-logo-university.png" }]
+}
+
+
 
 
   // Rajouter Projet :
-   // Projet Machine Learning (CyberSécurité)
-   // Traitements d'images 
   // The Country
+   // MonCentrePermis
 
 
 
